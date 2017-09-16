@@ -10,4 +10,5 @@
 FROM ubuntu:14.04
 MAINTAINER DennyZhang.com <https://dennyzhang.com>
 
+ADD tcp_port_scan.py /usr/sbin/tcp_port_scan.py
 ########################################################################################
