@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 ##-------------------------------------------------------------------
 ## @copyright 2015 DennyZhang.com
 ## File : tcp_port_scan.py
@@ -7,7 +7,7 @@
 ## More reading: https://www.dennyzhang.com/nmap_port_scan
 ## --
 ## Created : <2016-01-15>
-## Updated: Time-stamp: <2017-09-04 18:55:30>
+## Updated: Time-stamp: <2017-10-04 14:32:18>
 ##-------------------------------------------------------------------
 import argparse
 import subprocess
@@ -76,6 +76,7 @@ def nmap_check(server_ip, ports):
     command = nmap_command % (nmap_opts)
     print(output_prefix, "Run: %s" % (command))
     nmap_output = subprocess.check_output(command, shell=True)
+    nmap_output = nmap_output.decode("utf-8")
     print(nmap_output)
     return nmap_output
 
